@@ -1,0 +1,35 @@
+# 유저 생성
+POST http://localhost:3000/user/create
+Content-Type: application/json
+
+{
+    "username": "jihun",
+    "password": "test1234",
+    "email": "jihun@naver.com"
+}
+
+### 유저 정보 찾기
+GET http://localhost:3000/user/getUser/jihun@naver.com
+
+### 유저 정보 업데이트
+PUT  http://localhost:3000/user/update/jihun@naver.com
+Content-Type: application/json
+
+{
+    "username": "jihun2",
+    "password": "test12345",
+    "email": "jihun@naver.com"
+}
+
+### 유저 삭제
+DELETE http://localhost:3000/user/delete/dbswlgns2189@gmail.com
+
+### 잘못된 이메일을 입력한 경우, 유효성 검증 test
+POST http://localhost:3000/user/create
+Content-Type: application/json
+
+{
+    "username": "jihun",
+    "password": "test1234",
+    "email": "jihun-test"
+}

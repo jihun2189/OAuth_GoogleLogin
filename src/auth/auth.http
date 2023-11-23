@@ -1,0 +1,51 @@
+### 회원가입
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "email": "jihun@naver.com",
+    "password": "1234",
+    "username": "jihun"
+}
+
+### 로그인
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "jihun@naver.com",
+    "password": "1234"
+}
+
+### 로그인2
+POST http://localhost:3000/auth/login2
+Content-Type: application/json
+
+{
+    "email": "jihun2@naver.com",
+    "password": "1234"
+}
+
+### Guard test, 쿠키가 저장되어 있는 동안 인증하기
+GET http://localhost:3000/auth/test-guard
+
+### 로그인3 : 세션을 사용하는 테스트
+POST http://localhost:3000/auth/login3
+Content-Type: application/json
+
+{
+    "email": "jihun@naver.com",
+    "password": "1234"
+}
+
+### 로그인3 : 틀린 패스워드로 테스트
+POST http://localhost:3000/auth/login3
+Content-Type: application/json
+
+{
+    "email": "jihun@naver.com",
+    "password": "12345"
+}
+
+### 인증이 성공 하는지 테스트
+GET http://localhost:3000/auth/test-guard2
